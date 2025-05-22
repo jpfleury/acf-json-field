@@ -65,7 +65,7 @@ class acf_field_json extends \acf_field {
 				'instructions' => sprintf(__('Select the editor mode ("%s" by default)', 'acf-json-field'), self::DEFAULT_EDITOR_MODE),
 			]
 		);
-		
+
 		acf_render_field_setting(
 			$field,
 			[
@@ -79,7 +79,7 @@ class acf_field_json extends \acf_field {
 				'instructions' => __('Editor height (px) different from the default height defined in the stylesheet. If the editor is disabled, the height will apply to the textarea.', 'acf-json-field'),
 			]
 		);
-		
+
 		acf_render_field_setting(
 			$field,
 			[
@@ -102,12 +102,12 @@ class acf_field_json extends \acf_field {
 		$textarea_id = isset($field['id']) ? esc_attr($field['id']) : '';
 		$textarea_name = isset($field['name']) ? esc_attr($field['name']) : '';
 		$field_value = isset($field['value']) ? $field['value'] : '';
-		
+
 		if (is_string($field_value)) {
 			# Decode the JSON string to ensure it can be re-encoded with consistent formatting.
 			$field_value = JsonUtils::decode($field_value);
 		}
-		
+
 		$field_value = JsonUtils::encode($field_value);
 		$textarea_value = esc_textarea($field_value);
 
@@ -119,16 +119,16 @@ class acf_field_json extends \acf_field {
 		$editor_mode = isset($field['editor_mode']) ? esc_attr($field['editor_mode']) : self::DEFAULT_EDITOR_MODE;
 		$style_attr = '';
 		$style = [];
-		
+
 		if (!empty($field['editor_height'])) {
 			$style['height'] = esc_attr($field['editor_height']) . 'px';
 		}
-		
+
 		if (!empty($style)) {
 			foreach ($style as $k => $v) {
 				$style_attr .= "$k: $v;";
 			}
-			
+
 			$style_attr = 'style="' . $style_attr . '"';
 		}
 

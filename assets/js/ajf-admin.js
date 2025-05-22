@@ -33,10 +33,10 @@ jQuery(document).ready(function ($) {
 		const $textarea = $(this);
 		const textarea_id = $textarea.attr('id');
 		const $editor = $('#' + textarea_id + '-editor');
-		
+
 		if ($editor.length) {
 			const editor_mode = $editor.attr('data-editor-mode');
-			
+
 			if (editor_mode != 'none') {
 				const textarea_value = ajf_decode_html_entities($textarea.val().trim());
 				const json_data = ajf_str_to_json_data(textarea_value);
@@ -50,7 +50,7 @@ jQuery(document).ready(function ($) {
 					console.error(error_msg, json_data.error, 'Parsed value: ' + textarea_value);
 					wp.data.dispatch('core/notices').createNotice('error', error_msg, { isDismissible: true });
 				}
-				
+
 				const json_editor = new JSONEditor({
 					target: $editor[0],
 					props: {

@@ -129,14 +129,14 @@ class JsonUtils {
 	public static function get_json_field($field, $id = null, $format = 'php') {
 		$id = self::get_id($id);
 		$data = '';
-		
+
 		if (str_starts_with($id, 'user_')) {
 			$user_id = substr($id, 5);
 			$raw_data = get_user_meta($user_id, $field, true);
 		} else {
 			$raw_data = get_post_meta($id, $field, true);
 		}
-		
+
 		if (!is_string($raw_data)) {
 			$raw_data = '{}';
 		}
@@ -173,13 +173,13 @@ class JsonUtils {
 		if (str_starts_with($id, 'user_')) {
 			$user_id = substr($id, 5);
 			$ret = update_user_meta($user_id, $field, $json_encoded);
-			
+
 			if ($ret === false) {
 				$current_value = get_user_meta($user_id, $field, true);
 			}
 		} else {
 			$ret = update_post_meta($id, $field, $json_encoded);
-			
+
 			if ($ret === false) {
 				$current_value = get_post_meta($id, $field, true);
 			}
