@@ -1,3 +1,5 @@
+[![release.yml](https://github.com/jpfleury/acf-json-field/actions/workflows/release.yml/badge.svg)](https://github.com/jpfleury/acf-json-field/releases)
+
 # ACF JSON Field
 
 ACF JSON Field is a WordPress plugin that adds a new ACF field type for editing, saving, and displaying JSON data.
