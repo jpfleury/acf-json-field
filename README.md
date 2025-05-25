@@ -89,7 +89,8 @@ Or for a specific user:
 
 ## License
 
-ACF JSON Field: A WordPress plugin that adds a new ACF field for editing, saving, and displaying JSON data  
+ACF JSON Field: A WordPress plugin that adds a new ACF field for editing, saving, and displaying JSON data
+
 Copyright (C) 2024  Jean-Philippe Fleury
 
 This program is free software: you can redistribute it and/or modify
